@@ -2,40 +2,40 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <script type="text/javascript" src="https://eisenfaust12.github.io/EFB/js/efb.all.js"></script>
-        <link rel="stylesheet" href="https://eisenfaust12.github.io/EFB/css/efb.all.css">
+        <script type="text/javascript" src="https://eisenfaust12.github.io/EFB/js/efb.all.js?12062020012659" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://eisenfaust12.github.io/EFB/css/efb.all.css?12062020012659">
     </head>
-
-    <body class="">
+    <body>
         <div style="width: 1024px; margin: auto;" id="idEfbLayer">
+            <div id="dbg"><pre></pre><input type="text"></div>
             <div class="ui secondary eleven menu a320-tab-main">
-                <a class="active item" data-tab="tab01">SERVICE</a>
-                <a class="item" data-tab="tab02">PERF DATA</a>
-                <a class="item" data-tab="tab03" id="plan_tab">PLAN</a>
-                <a class="item" data-tab="tab05">CHARTS</a>
-                <a class="item" data-tab="tab12" id="taxi_tab">TAXIWAYS</a>
-                <a class="item" data-tab="tab06" id="pdf_tab">PDF</a>
-                <a class="item" data-tab="tab04" id="wx_tab">METAR</a>
-                <a class="item" data-tab="tab15" id="vs_tab">WX</a>
-                <a class="item" id="browserTab" data-tab="tab07">BROWSER</a>
-                <a class="item" data-tab="tab08" id="failures_tab">FAILURES</a>
-                <a class="item" data-tab="tab10">SETTINGS</a>
-                <a class="item" data-tab="tab14" id="states_tab">STATES</a>
-
+                <a class="active item" data-tab="service">SERVICE</a>
+                <a class="item" data-tab="perfdata">PERF DATA</a>
+                <a class="item" data-tab="plan" id="plan_tab">PLAN</a>
+                <a class="item" data-tab="charts">CHARTS</a>
+                <a class="item" data-tab="taxiways" id="taxi_tab">TAXIWAYS</a>
+                <a class="item" data-tab="pdf" id="pdf_tab">PDF</a>
+                <a class="item" data-tab="metar" id="wx_tab">METAR</a>
+                <a class="item" data-tab="wx" id="vs_tab">WX</a>
+                <a class="item" id="browserTab" data-tab="browser">BROWSER</a>
+                <a class="item" data-tab="failures" id="failures_tab">FAILURES</a>
+                <a class="item" data-tab="settings">SETTINGS</a>
+                <a class="item" data-tab="states" id="states_tab">STATES</a>
+                <a class="item" data-tab="fap" id="fapTab">FAP</a>
             </div>
 
-            <div class="active ui bottom attached tab segment a320-tab-segment" data-tab="tab01">
+            <div class="active ui bottom attached tab segment a320-tab-segment" data-tab="service">
 
                 <div class="ui horizontal segments">
                     <div class="ui a320-toggle-panel a320-segment"></div>
                     <div class="ui a320-animate-segment a320-control-panel a320-segment">
                         <div class="ui top attached tabular menu a320-tab-control-panel">
-                            <a class="active item" data-tab="tab01/01">SUPPLY</a>
-                            <a class="item" data-tab="tab01/02">FUEL</a>
-                            <a class="item" data-tab="tab01/03">PAX</a>
-                            <a class="item" data-tab="tab01/04">CARGO</a>
+                            <a class="active item" data-tab="service/supply">SUPPLY</a>
+                            <a class="item" data-tab="service/fuel">FUEL</a>
+                            <a class="item" data-tab="service/pax">PAX</a>
+                            <a class="item" data-tab="service/cargo">CARGO</a>
                         </div>
-                        <div class="ui bottom attached active tab segment a320-service" data-tab="tab01/01">
+                        <div class="ui bottom attached active tab segment a320-service" data-tab="service/supply">
                             <div class="ui middle aligned centered grid">
                                 <div class="sixteen wide column">&nbsp;</div>
                                 <div class="center aligned sixteen wide column a320-no-t-padding">GROUND POWER UNIT</div>
@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ui bottom attached tab segment a320-service" data-tab="tab01/02">
+                        <div class="ui bottom attached tab segment a320-service" data-tab="service/fuel">
                             <div class="ui grid middle aligned" id="fuelButtonGroup">
                                 <div class="sixteen wide column"></div>
                                 <div class="two wide column"></div>
@@ -169,7 +169,7 @@
                                 <div class="four wide column centered"><div class="ui button fluid" id="setFuelValue">Set</div></div>
                             </div>
                         </div>
-                        <div class="ui bottom attached tab segment a320-service" data-tab="tab01/03">
+                        <div class="ui bottom attached tab segment a320-service" data-tab="service/pax">
                             <div class="ui grid middle aligned" id="paxButtonGroup">
                                 <div class="sixteen wide column"></div>
                                 <div class="sixteen wide column a320-no-t-padding center aligned">AIR STAIRS</div>
@@ -191,7 +191,7 @@
                                 <div class="sixteen wide column"></div>
                             </div>
                             <div class="ui grid" id="paxControllGroup">
-                                <div class="sixteen wide column a320-no-t-padding">CABIN BUSINESS A:</div>
+                                <div class="sixteen wide column a320-no-t-padding">CABIN <span id="cabinALabel"></span> A:</div>
                                 <div class="eleven wide column middle aligned content a320-no-padding">
                                     <div class="ui range" id="rCabinA"></div>
                                 </div>
@@ -244,7 +244,7 @@
                                 <div class="four wide column centered"><div class="ui button fluid" id="setPaxValue">Set</div></div>
                             </div>
                         </div>
-                        <div class="ui bottom attached tab segment a320-service" data-tab="tab01/04">
+                        <div class="ui bottom attached tab segment a320-service" data-tab="service/cargo">
                             <div class="ui grid middle aligned" id="cargoButtonGroup">
                                 <div class="sixteen wide column"></div>
                                 <div class="sixteen wide column a320-no-t-padding center aligned">BAGGAGE LOADER</div>
@@ -321,7 +321,7 @@
                         </div>
                     </div>
                     <div class="ui a320-content-panel-group a320-segment">
-                        <div class="ui a320-content-panel a320-layer active" data-tab="tab01/01">
+                        <div class="ui a320-content-panel a320-layer active" data-tab="service/supply">
                             <img id="service_scheme" src="Resources/svg/A320.svg">
                             <svg class="a320-overlay" viewBox="0 0 500 500" height="500" width="500">
                                 <g id="gpu" transform="translate(-634,-40)">
@@ -477,7 +477,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <div class="ui a320-content-panel a320-layer" data-tab="tab01/02">
+                        <div class="ui a320-content-panel a320-layer" data-tab="service/fuel">
                             <img id="fuel_scheme" src="Resources/svg/A320_fuel.svg">
                             <svg class="a320-overlay" id="fuel_scheme" viewBox="0 0 730.29541 783.08788" height="178mm" width="166mm">
                                 <g style="display:inline" id="layer4" transform="translate(-26.983646,-732.19059)">
@@ -589,420 +589,9 @@
                                 </g>
                             </svg>
                         </div>
-                        <div class="ui a320-content-panel a320-layer" data-tab="tab01/03">
-                            <img id="service_scheme1" src="Resources/svg/A320_pax.svg">
-                            <svg class="a320-overlay" id="fuel_scheme" viewBox="0 0 730.29541 783.08788" height="178mm" width="166mm">
-                                <g style="display:inline" id="layer4" transform="translate(-26.983646,-732.19059)">
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 357.78297,895.03453 v -7.49666 h 5.97835 5.97834 v 7.49666 7.49665 h -5.97834 -5.97835 z"
-                                        id="a_1" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 373.97828,895.03485 v -7.49698 h 5.9786 5.97861 l -0.0161,7.48084 -0.0161,7.48085 -5.96253,0.0162 -5.96253,0.0162 z"
-                                        id="a_2" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.06557,895.03453 v -7.49666 h 6.0416 6.04161 v 7.49666 7.49665 h -6.04161 -6.0416 z"
-                                        id="a_3" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 415.13435,895.03453 v -7.49666 h 5.53549 5.53551 v 7.49666 7.49665 h -5.53551 -5.53549 z"
-                                        id="a_4" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 357.78297,922.23757 v -7.49665 h 5.97835 5.97834 v 7.49665 7.49665 h -5.97834 -5.97835 z"
-                                        id="a_5" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 373.97828,922.2379 v -7.49698 h 5.9786 5.97861 l -0.0161,7.48083 -0.0161,7.48085 -5.96253,0.0162 -5.96253,0.0162 z"
-                                        id="a_6" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.06557,922.23757 v -7.49665 h 6.0416 6.04161 v 7.49665 7.49665 h -6.04161 -6.0416 z"
-                                        id="a_7" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 415.13435,922.23757 v -7.49665 h 5.53549 5.53551 v 7.49665 7.49665 h -5.53551 -5.53549 z"
-                                        id="a_8" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 357.78297,948.71154 v -7.46502 h 5.97835 5.97834 v 7.46502 7.46503 h -5.97834 -5.97835 z"
-                                        id="a_9" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 373.97828,948.71154 v -7.46502 h 5.97835 5.97834 v 7.46502 7.46503 h -5.97834 -5.97835 z"
-                                        id="a_10" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.06557,948.71154 v -7.46502 h 6.0416 6.04161 v 7.46502 7.46503 h -6.04161 -6.0416 z"
-                                        id="a_11" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 415.13435,948.71154 v -7.46502 h 5.53549 5.53551 v 7.46502 7.46503 h -5.53551 -5.53549 z"
-                                        id="a_12" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 357.78297,973.4157 v -7.49665 h 5.97835 5.97834 v 7.49665 7.49666 h -5.97834 -5.97835 z"
-                                        id="a_13" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 373.97828,973.41602 v -7.49697 h 5.9786 5.97861 l -0.0161,7.48084 -0.0161,7.48083 -5.96253,0.0162 -5.96253,0.0162 z"
-                                        id="a_14" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.06557,973.4157 v -7.49665 h 6.0416 6.04161 v 7.49665 7.49666 h -6.04161 -6.0416 z"
-                                        id="a_15" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 415.13435,973.4157 v -7.49665 h 5.53549 5.53551 v 7.49665 7.49666 h -5.53551 -5.53549 z"
-                                        id="a_16" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.76881,996.45254 v -4.30893 h 3.335 3.33499 v 4.30893 4.30896 h -3.33499 -3.335 z"
-                                        id="b_1" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 368.98037,996.45254 v -4.30893 h 3.45305 3.45305 v 4.30893 4.30896 h -3.45305 -3.45305 z"
-                                        id="b_2" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 379.13291,996.45254 v -4.30893 h 3.54158 3.54159 v 4.30893 4.30896 h -3.54159 -3.54158 z"
-                                        id="b_3" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.49701,996.45254 v -4.30893 h 3.63012 3.63012 v 4.30893 4.30896 h -3.63012 -3.63012 z"
-                                        id="b_4" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 409.82662,996.45254 v -4.30893 h 3.27596 3.27596 v 4.30893 4.30896 h -3.27596 -3.27596 z"
-                                        id="b_5" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 419.58959,996.44083 v -4.30893 h 3.33499 3.33499 v 4.30893 4.30887 h -3.33499 -3.33499 z"
-                                        id="b_6" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.79243,1011.3745 v -4.3089 h 3.33498 3.33499 v 4.3089 4.3089 h -3.33499 -3.33498 z"
-                                        id="b_7" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 369.00399,1011.3745 v -4.3089 h 3.45304 3.45304 v 4.3089 4.3089 h -3.45304 -3.45304 z"
-                                        id="b_8" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 379.15653,1011.3745 v -4.3089 h 3.54157 3.54159 v 4.3089 4.3089 h -3.54159 -3.54157 z"
-                                        id="b_9" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.52062,1011.3745 v -4.3089 h 3.63012 3.63012 v 4.3089 4.3089 h -3.63012 -3.63012 z"
-                                        id="b_10" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 409.85024,1011.374 v -4.3094 l 3.2612,0.015 3.2612,0.015 0.0151,4.2941 0.0151,4.2942 h -3.27635 -3.27634 z"
-                                        id="b_11" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 419.60395,1011.3893 0.0151,-4.2942 3.32022,-0.015 3.32024,-0.015 v 4.3094 4.3094 h -3.33537 -3.33538 z"
-                                        id="b_12" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.7334,1026.4853 v -4.309 h 3.33499 3.33499 v 4.309 4.3089 h -3.33499 -3.33499 z"
-                                        id="b_13" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 368.94496,1026.4853 v -4.309 h 3.45304 3.45304 v 4.309 4.3089 h -3.45304 -3.45304 z"
-                                        id="b_14" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 379.0975,1026.4853 v -4.309 h 3.54157 3.54159 v 4.309 4.3089 h -3.54159 -3.54157 z"
-                                        id="b_15" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.4616,1026.4853 v -4.309 h 3.63012 3.63012 v 4.309 4.3089 h -3.63012 -3.63012 z"
-                                        id="b_16" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 409.79121,1026.4853 v -4.309 h 3.27596 3.27597 v 4.309 4.3089 h -3.27597 -3.27596 z"
-                                        id="b_17" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 419.58959,1026.4853 v -4.309 h 3.30547 3.30548 v 4.309 4.3089 h -3.30548 -3.30547 z"
-                                        id="b_18" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.7334,1041.9502 v -4.309 h 3.33499 3.33499 v 4.309 4.3089 h -3.33499 -3.33499 z"
-                                        id="b_19" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 368.94496,1041.9502 v -4.309 h 3.45304 3.45304 v 4.309 4.3089 h -3.45304 -3.45304 z"
-                                        id="b_20" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 379.0975,1041.9502 v -4.309 h 3.54157 3.54159 v 4.309 4.3089 h -3.54159 -3.54157 z"
-                                        id="b_21" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.4616,1041.9502 v -4.309 h 3.63012 3.63012 v 4.309 4.3089 h -3.63012 -3.63012 z"
-                                        id="b_22" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 409.79121,1041.9502 v -4.309 h 3.27596 3.27597 v 4.309 4.3089 h -3.27597 -3.27596 z"
-                                        id="b_23" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 419.58959,1041.9502 v -4.309 h 3.30547 3.30548 v 4.309 4.3089 h -3.30548 -3.30547 z"
-                                        id="b_24" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.7334,1057.5331 v -4.3089 h 3.33499 3.33499 v 4.3089 4.3089 h -3.33499 -3.33499 z"
-                                        id="b_25" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 368.94496,1057.5331 v -4.3089 h 3.45304 3.45304 v 4.3089 4.3089 h -3.45304 -3.45304 z"
-                                        id="b_26" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 379.0975,1057.5331 v -4.3089 h 3.54157 3.54159 v 4.3089 4.3089 h -3.54159 -3.54157 z"
-                                        id="b_27" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.4616,1057.5331 v -4.3089 h 3.63012 3.63012 v 4.3089 4.3089 h -3.63012 -3.63012 z"
-                                        id="b_28" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 409.79121,1057.5331 v -4.3089 h 3.27596 3.27597 v 4.3089 4.3089 h -3.27597 -3.27596 z"
-                                        id="b_29" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 419.58959,1057.5331 v -4.3089 h 3.30547 3.30548 v 4.3089 4.3089 h -3.30548 -3.30547 z"
-                                        id="b_30" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.7334,1073.0275 v -4.2794 h 3.33499 3.33499 v 4.2794 4.2794 h -3.33499 -3.33499 z"
-                                        id="b_31" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 368.94496,1073.0275 v -4.2794 h 3.45304 3.45304 v 4.2794 4.2794 h -3.45304 -3.45304 z"
-                                        id="b_32"/>
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 379.0975,1073.0275 v -4.2794 h 3.54157 3.54159 v 4.2794 4.2794 h -3.54159 -3.54157 z"
-                                        id="b_33" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.4616,1073.0275 v -4.2794 h 3.63012 3.63012 v 4.2794 4.2794 h -3.63012 -3.63012 z"
-                                        id="b_34" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 409.79121,1073.0275 v -4.2794 h 3.27596 3.27597 v 4.2794 4.2794 h -3.27597 -3.27596 z"
-                                        id="b_35" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 419.58959,1073.0275 v -4.2794 h 3.30547 3.30548 v 4.2794 4.2794 h -3.30548 -3.30547 z"
-                                        id="b_36" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.77274,1092.2603 c -0.0217,-0.022 -0.0393,-1.9607 -0.0393,-4.3089 v -4.2696 h 3.33499 3.33499 v 4.3089 4.3089 h -3.29564 c -1.8126,0 -3.31335,-0.018 -3.335,-0.039 z"
-                                        id="b_37" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 368.94496,1087.9907 v -4.3089 h 3.48255 3.48256 v 4.3089 4.3089 h -3.48256 -3.48255 z"
-                                        id="b_38" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 379.15653,1087.9907 v -4.3089 h 3.54157 3.54159 v 4.3089 4.3089 h -3.54159 -3.54157 z"
-                                        id="b_39" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.52062,1087.9907 v -4.3089 h 3.6006 3.60062 v 4.3089 4.3089 h -3.60062 -3.6006 z"
-                                        id="b_40" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 409.85024,1087.9907 v -4.3089 h 3.24644 3.24646 v 4.3089 4.3089 h -3.24646 -3.24644 z"
-                                        id="b_41" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 419.58959,1087.9907 v -4.3089 h 3.33499 3.33499 v 4.3089 4.3089 h -3.33499 -3.33499 z"
-                                        id="b_42" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.7334,1103.1015 v -4.309 h 3.30547 3.30548 v 4.309 4.3089 h -3.30548 -3.30547 z"
-                                        id="b_43" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 368.88594,1103.1015 v -4.309 h 3.48254 3.48256 v 4.309 4.3089 h -3.48256 -3.48254 z"
-                                        id="b_44" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 379.0975,1103.1015 v -4.309 h 3.54157 3.54159 v 4.309 4.3089 h -3.54159 -3.54157 z"
-                                        id="b_45" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.4616,1103.1015 v -4.309 h 3.6006 3.60061 v 4.309 4.3089 h -3.60061 -3.6006 z"
-                                        id="b_46" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 409.79121,1103.1015 v -4.309 h 3.24645 3.24645 v 4.309 4.3089 h -3.24645 -3.24645 z"
-                                        id="b_47" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.11387321;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 419.53216,1103.0989 v -4.3018 h 3.3213 3.3213 v 4.3018 4.3019 h -3.3213 -3.3213 z"
-                                        id="b_48" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.7334,1118.5664 v -4.3089 h 3.30547 3.30548 v 4.3089 4.3089 h -3.30548 -3.30547 z"
-                                        id="b_49" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 368.88594,1118.5664 v -4.3089 h 3.48254 3.48256 v 4.3089 4.3089 h -3.48256 -3.48254 z"
-                                        id="b_50" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 379.0975,1118.5664 v -4.3089 h 3.54157 3.54159 v 4.3089 4.3089 h -3.54159 -3.54157 z"
-                                        id="b_51" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.4616,1118.5664 v -4.3089 h 3.6006 3.60061 v 4.3089 4.3089 h -3.60061 -3.6006 z"
-                                        id="b_52" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 409.79121,1118.5664 v -4.3089 h 3.24645 3.24645 v 4.3089 4.3089 h -3.24645 -3.24645 z"
-                                        id="b_53" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 419.53056,1118.5664 v -4.3089 h 3.33499 3.33499 v 4.3089 4.3089 h -3.33499 -3.33499 z"
-                                        id="b_54" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.7334,1134.1493 v -4.3089 h 3.30547 3.30548 v 4.3089 4.309 h -3.30548 -3.30547 z"
-                                        id="b_55" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 368.88594,1134.1493 v -4.3089 h 3.48254 3.48256 v 4.3089 4.309 h -3.48256 -3.48254 z"
-                                        id="b_56" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 379.0975,1134.1493 v -4.3089 h 3.54157 3.54159 v 4.3089 4.309 h -3.54159 -3.54157 z"
-                                        id="b_57" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 399.4616,1134.1493 v -4.3089 h 3.6006 3.60061 v 4.3089 4.309 h -3.60061 -3.6006 z"
-                                        id="b_58" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 409.79121,1134.1493 v -4.3089 h 3.24645 3.24645 v 4.3089 4.309 h -3.24645 -3.24645 z"
-                                        id="b_59" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.10624746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 419.53056,1134.1493 v -4.3089 h 3.33499 3.33499 v 4.3089 4.309 h -3.33499 -3.33499 z"
-                                        id="b_60" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.06917571;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 285.02835,362.19265 v -3.68937 h 2.8631 2.86311 v 3.68937 3.68937 h -2.86311 -2.8631 z"
-                                        id="c_1" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 293.76561,362.21237 v -3.6933 h 2.97616 2.97615 v 3.6933 3.69331 h -2.97615 -2.97616 z"
-                                        id="c_2" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 302.5148,362.21237 v -3.6933 h 3.04787 3.04788 v 3.6933 3.69331 h -3.04788 -3.04787 z"
-                                        id="c_3" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 320.01318,362.21237 v -3.6933 h 3.11959 3.11959 v 3.6933 3.69331 h -3.11959 -3.11959 z"
-                                        id="c_4" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 328.9058,362.21237 v -3.6933 h 2.79687 2.79688 v 3.6933 3.69331 h -2.79688 -2.79687 z"
-                                        id="c_5" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 337.29642,362.21237 v -3.6933 h 2.83273 2.83273 v 3.6933 3.69331 h -2.83273 -2.83273 z"
-                                        id="c_6" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.15025659;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 358.78702,1168.7127 v -4.299 h 3.2973 3.29729 v 4.299 4.299 h -3.29729 -3.2973 z"
-                                        id="c_7" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 293.83732,375.0501 v -3.69411 h 2.97681 2.97681 l -0.0186,3.67538 -0.0186,3.67538 -2.95823,0.0187 -2.95823,0.0187 z"
-                                        id="c_8" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 302.58651,375.0493 v -3.69331 h 3.01202 3.01202 v 3.69331 3.69331 h -3.01202 -3.01202 z"
-                                        id="c_9" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 320.08489,375.0493 v -3.69331 h 3.08374 3.08373 v 3.69331 3.69331 h -3.08373 -3.08374 z"
-                                        id="c_10" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 328.9058,375.0493 v -3.69331 h 2.79687 2.79688 v 3.69331 3.69331 h -2.79688 -2.79687 z"
-                                        id="c_11" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 337.29642,375.0493 v -3.69331 h 2.86859 2.86858 v 3.69331 3.69331 h -2.86858 -2.86859 z"
-                                        id="c_12" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 285.01641,388.02966 v -3.69331 h 2.83273 2.83273 v 3.69331 3.6933 h -2.83273 -2.83273 z"
-                                        id="c_13" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 293.76561,388.02966 v -3.69331 h 2.97616 2.97615 v 3.69331 3.6933 h -2.97615 -2.97616 z"
-                                        id="c_14" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 302.5148,388.02966 v -3.69331 h 3.04787 3.04788 v 3.69331 3.6933 h -3.04788 -3.04787 z"
-                                        id="c_15" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 320.01318,388.02966 v -3.69331 h 3.08373 3.08373 v 3.69331 3.6933 h -3.08373 -3.08373 z"
-                                        id="c_16" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 328.9058,388.02966 v -3.69331 h 2.76102 2.76101 v 3.69331 3.6933 h -2.76101 -2.76102 z"
-                                        id="c_17" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 337.2247,388.02966 v -3.69331 h 2.86859 2.86859 v 3.69331 3.6933 h -2.86859 -2.86859 z"
-                                        id="c_18" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 285.01641,401.29687 v -3.6933 h 2.83273 2.83273 v 3.6933 3.69331 h -2.83273 -2.83273 z"
-                                        id="c_19" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 293.76561,401.29687 v -3.6933 h 2.97616 2.97615 v 3.6933 3.69331 h -2.97615 -2.97616 z"
-                                        id="c_20" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 302.5148,401.29687 v -3.6933 h 3.04787 3.04788 v 3.6933 3.69331 h -3.04788 -3.04787 z"
-                                        id="c_21" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 320.01318,401.29687 v -3.6933 h 3.08373 3.08373 v 3.6933 3.69331 h -3.08373 -3.08373 z"
-                                        id="c_22" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 328.9058,401.29687 v -3.6933 h 2.76102 2.76101 v 3.6933 3.69331 h -2.76101 -2.76102 z"
-                                        id="c_23" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 337.2247,401.29687 v -3.6933 h 2.86859 2.86859 v 3.6933 3.69331 h -2.86859 -2.86859 z"
-                                        id="c_24" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 285.01641,414.70752 v -3.69331 h 2.83273 2.83273 v 3.69331 3.69331 h -2.83273 -2.83273 z"
-                                        id="c_25" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 293.76561,414.70752 v -3.69331 h 2.97616 2.97615 v 3.69331 3.69331 h -2.97615 -2.97616 z"
-                                        id="c_26" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 302.5148,414.70752 v -3.69331 h 3.04787 3.04788 v 3.69331 3.69331 h -3.04788 -3.04787 z"
-                                        id="c_27" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 320.01318,414.70752 v -3.69331 h 3.08373 3.08373 v 3.69331 3.69331 h -3.08373 -3.08373 z"
-                                        id="c_28" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 328.9058,414.70752 v -3.69331 h 2.76102 2.76101 v 3.69331 3.69331 h -2.76101 -2.76102 z"
-                                        id="c_29" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 337.27251,418.35302 c -0.0263,-0.0263 -0.0478,-1.68829 -0.0478,-3.69331 v -3.6455 h 2.86859 2.86859 v 3.69331 3.69331 h -2.82078 c -1.55143,0 -2.84229,-0.0215 -2.86859,-0.0478 z"
-                                        id="c_30" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 285.01641,428.01059 v -3.65745 h 2.83273 2.83273 v 3.65745 3.65745 h -2.83273 -2.83273 z"
-                                        id="c_31" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 293.76561,428.01059 v -3.65745 h 2.97616 2.97615 v 3.65745 3.65745 h -2.97615 -2.97616 z"
-                                        id="c_32" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 302.5148,428.01059 v -3.65745 h 3.04787 3.04788 v 3.65745 3.65745 h -3.04788 -3.04787 z"
-                                        id="c_33" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 320.01318,428.01059 v -3.65745 h 3.08373 3.08373 v 3.65745 3.65745 h -3.08373 -3.08373 z"
-                                        id="c_34" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 328.9058,428.01059 v -3.65745 h 2.76102 2.76101 v 3.65745 3.65745 h -2.76101 -2.76102 z"
-                                        id="c_35" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 337.2247,428.01059 v -3.65745 h 2.86859 2.86859 v 3.65745 3.65745 h -2.86859 -2.86859 z"
-                                        id="c_36" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 285.01641,440.84752 v -3.65745 h 2.86859 2.86859 v 3.65745 3.65745 h -2.86859 -2.86859 z"
-                                        id="c_37" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 293.76561,440.84752 v -3.65745 h 2.97616 2.97615 v 3.65745 3.65745 h -2.97615 -2.97616 z"
-                                        id="c_38" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 302.5148,440.84752 v -3.65745 h 3.04787 3.04788 v 3.65745 3.65745 h -3.04788 -3.04787 z"
-                                        id="c_39" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 320.01318,440.84752 v -3.65745 h 3.11959 3.11959 v 3.65745 3.65745 h -3.11959 -3.11959 z"
-                                        id="c_40" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 328.9058,440.84752 v -3.65745 h 2.79687 2.79688 v 3.65745 3.65745 h -2.79688 -2.79687 z"
-                                        id="c_41" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 337.29642,440.84752 v -3.65745 h 2.83273 2.83273 v 3.65745 3.65745 h -2.83273 -2.83273 z"
-                                        id="c_42" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 284.9447,453.82788 v -3.65745 h 2.86859 2.86858 v 3.65745 3.65745 h -2.86858 -2.86859 z"
-                                        id="c_43" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 293.69389,453.82788 v -3.65745 h 2.97616 2.97616 v 3.65745 3.65745 h -2.97616 -2.97616 z"
-                                        id="c_44" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 302.44308,453.82788 v -3.65745 h 3.04788 3.04787 v 3.65745 3.65745 h -3.04787 -3.04788 z"
-                                        id="c_45" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 320.01318,453.82788 v -3.65745 h 3.08373 3.08373 v 3.65745 3.65745 h -3.08373 -3.08373 z"
-                                        id="c_46" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 328.83409,453.82788 v -3.65745 h 2.79687 2.79687 v 3.65745 3.65745 h -2.79687 -2.79687 z"
-                                        id="c_47" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 337.2247,453.82788 v -3.65745 h 2.86859 2.86859 v 3.65745 3.65745 h -2.86859 -2.86859 z"
-                                        id="c_48" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 284.9447,467.0951 v -3.65745 h 2.86859 2.86858 v 3.65745 3.65745 h -2.86858 -2.86859 z"
-                                        id="c_49" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 293.69389,467.0951 v -3.65745 h 2.97616 2.97616 v 3.65745 3.65745 h -2.97616 -2.97616 z"
-                                        id="c_50" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 302.44308,467.0951 v -3.65745 h 3.04788 3.04787 v 3.65745 3.65745 h -3.04787 -3.04788 z"
-                                        id="c_51" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 320.01318,467.0951 v -3.65745 h 3.08373 3.08373 v 3.65745 3.65745 h -3.08373 -3.08373 z"
-                                        id="c_52" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 328.83409,467.0951 v -3.65745 h 2.79687 2.79687 v 3.65745 3.65745 h -2.79687 -2.79687 z"
-                                        id="c_53" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 337.2247,467.0951 v -3.65745 h 2.86859 2.86859 v 3.65745 3.65745 h -2.86859 -2.86859 z"
-                                        id="c_54" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 284.96198,480.48781 0.0186,-3.67537 2.85066,-0.0188 2.85065,-0.0188 v 3.69413 3.69413 h -2.86923 -2.86924 z"
-                                        id="c_55" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 293.71117,480.48781 0.0186,-3.67537 2.95823,-0.0187 2.95823,-0.0187 v 3.6941 3.6941 h -2.97681 -2.97681 z"
-                                        id="c_56" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 302.46036,480.48781 0.0186,-3.67537 3.02995,-0.0187 3.02994,-0.0187 v 3.69409 3.69408 h -3.04852 -3.04853 z"
-                                        id="c_57" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 320.01318,480.46988 v -3.6933 h 3.08373 3.08373 v 3.6933 3.69331 h -3.08373 -3.08373 z"
-                                        id="c_58" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 328.83409,480.46988 v -3.6933 h 2.79687 2.79687 v 3.6933 3.69331 h -2.79687 -2.79687 z"
-                                        id="c_59" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                    <path style="fill:#3662ff;fill-opacity:0;fill-rule:nonzero;stroke:#c4c4c4;stroke-width:0.12908642;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                        d="m 337.2247,480.46906 v -3.69413 l 2.85066,0.0188 2.85066,0.0188 0.0186,3.67537 0.0186,3.67538 h -2.86924 -2.86924 z"
-                                        id="c_60" transform="matrix(1.164,0,0,1.164,26.983646,732.19059)" />
-                                </g>
-                            </svg>
+                        <div class="ui a320-content-panel a320-layer" data-tab="service/pax">
+                            <img id="service_scheme1" src="Resources/svg/A320.svg">
+                            <div id="cabinLayout"></div>
                             <svg class="a320-overlay" viewBox="2 175 133 104" width="500" height="600">
                                 <g id="RF" transform="rotate(-2.3485628,3706.9304,42.503461)">
                                     <rect y="23.817707" x="92.037209" height="4.9136906" width="3.4017856" id="rect4564"
@@ -1238,7 +827,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <div class="ui a320-content-panel a320-layer" data-tab="tab01/04">
+                        <div class="ui a320-content-panel a320-layer" data-tab="service/cargo">
                             <img id="service_scheme2" src="Resources/svg/A320_cargo.svg">
                             <svg class="a320-overlay" id="cargo_scheme" viewBox="0 0 730.29541 783.08788" height="178mm" width="166mm">
                                 <g style="display:inline" id="layer4" transform="translate(-26.983646,-732.19059)">
@@ -1335,7 +924,7 @@
                 </div>
             </div>
 
-            <div class="ui bottom attached tab segment" data-tab="tab02">
+            <div class="ui bottom attached tab segment" data-tab="perfdata">
                 <table class="ui celled table" id="iPerfData">
                     <tr>
                         <td rowspan="3" colspan="3" class="center aligned a320-bold">DRY OPERATING WEIGHT<br />CONDITIONS</td>
@@ -1428,19 +1017,34 @@
                 </table>
             </div>
 
-            <div class="ui bottom attached tab segment" data-tab="tab03">
+            <div class="ui bottom attached tab segment" data-tab="plan">
                 <div class="ui grid middle aligned">
 					<div class="one wide column"></div>
                     <div class="fourteen wide column" id="flightplan"></div>
                     
-					<div class="thirteen wide column"></div>
+					<div class="one wide column"></div>
+
+              <div class="one wide column"></div>
+							<div class="one wide column">
+								<div class="ui toggle checkbox" id="darkMode">
+									<input type="checkbox">
+									<label></label>
+								</div>
+							</div>
+   							<div class="nine wide column">DARK MODE</div>
+
+
+                    <div class="two wide column" style="padding-right:0">
+                        <div class="ui button a320-switch-btn disabled" id="flightplan_set_data">Set Data</div>
+                    </div>
+
                     <div class="two wide column" style="padding-right:0">
                         <div class="ui button a320-switch-btn" id="reload_flightplan">Reload</div>
                     </div>
 				</div>
             </div>
 
-            <div class="ui bottom attached tab segment" data-tab="tab04">
+            <div class="ui bottom attached tab segment" data-tab="metar">
 
 				<div class="ui grid top aligned">
 					<div class="sixteen wide column">
@@ -1456,7 +1060,7 @@
                             </div>
    							<div class="right aligned nine wide column">DECODE REPORT</div>
 							<div class="one wide column">
-								<div class="ui toggle checkbox" id="wx_decode_report">
+								<div class="ui toggle checkbox" id="metarDecode">
 									<input type="checkbox">
 									<label></label>
 								</div>
@@ -1496,7 +1100,7 @@
 				</div>
 
             </div>
-            <div class="ui bottom attached tab segment" data-tab="tab05" style="padding-top:0; padding-bottom:0">
+            <div class="ui bottom attached tab segment" data-tab="charts" style="padding-top:0; padding-bottom:0">
 				<div class="ui grid middle aligned">
 					<div class="sixteen wide column">
 						<iframe width="100%" height="700px" style="border:0" id="charts"></iframe>
@@ -1504,7 +1108,7 @@
 				</div>
             </div>
 
-            <div class="ui bottom attached tab segment" data-tab="tab06" style="padding-top:0; padding-bottom:0">
+            <div class="ui bottom attached tab segment" data-tab="pdf" style="padding-top:0; padding-bottom:0">
 				<div class="ui grid middle aligned">
 					<div class="sixteen wide column">
 						<iframe src="https://eisenfaust12.github.io/EFB/pdf.js/viewer.html" width="100%" height="700px" style="border:0"></iframe>
@@ -1512,7 +1116,7 @@
 				</div>
             </div>
 
-            <div class="ui bottom attached tab segment" data-tab="tab07" style="padding-top:0; padding-bottom:0">
+            <div class="ui bottom attached tab segment" data-tab="browser" style="padding-top:0; padding-bottom:0">
                 <div id="browser" class="perspective effect-moveleft" >
                     <div class="container" >
                         <div class="wrapper">
@@ -1544,7 +1148,7 @@
             </div>
 
             <!-- Failures -->
-            <div class="ui bottom attached tab segment" data-tab="tab08">
+            <div class="ui bottom attached tab segment" data-tab="failures">
 
                 <div class="ui small modal edit_scenario_modal">
                     <i class="close icon"></i>
@@ -1688,279 +1292,408 @@
                                 <div class="six wide column"><div class="ui button a320-switch-btn" id="failure_reset">RESET</div></div>
                                 <div class="five wide column"></div>
                             </div>
-                        </fieldset>                        
+                        </fieldset>
                     </div>
                     <div class="three wide column"></div>
                 </div>
             </div>
 
-            <div class="ui bottom attached tab segment" data-tab="tab09">
-            </div>
-
-            <div class="ui bottom attached tab segment" data-tab="tab10">
-                <div class="ui grid middle aligned">
-                    <div class="eight wide column">
+            <div class="ui bottom attached tab segment" data-tab="settings">
+              <div class="ui grid middle aligned settings">
+                <div class="sixteen wide column">
+                  <div class="ui segment" style="margin-bottom:0px">
+                    <div class="ui inverted accordion">
+                      <div class="active title">
+                        <i class="dropdown icon"></i>
+                        GENERAL SETTINGS <span class="description">General A320 and EFB settings</span>
+                      </div>
+                      <div class="active content">
                         <div class="ui grid middle aligned settings">
-                            <div class="sixteen wide column"></div>
-                            <div class="right aligned eight wide column">PANELS QUALITY</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown" id="quality">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item" data-value="Low">Low</div>
-                                        <div class="item" data-value="Normal">Normal</div>
-                                        <div class="item" data-value="Hi">Hi</div>
-                                    </div>
+                          <div class="sixteen wide column"></div>
+                          
+                          <div class="one wide column"></div>
+                          <div class="three wide column">IRS ALIGNMENT SPEED</div>
+                          <div class="five wide column">
+                            <div class="ui selection dropdown" id="irsSpeed">
+                              <input type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text"></div>
+                                <div class="menu">
+                                  <div class="item" data-value="1">1x</div>
+                                  <div class="item" data-value="2">2x</div>
+                                  <div class="item" data-value="5">5x</div>
+                                  <div class="item" data-value="10">10x</div>
                                 </div>
+                              </div>
+                            </div>
+                            <div class="three wide column">SIMBRIEF USERNAME</div>
+                            <div class="three wide column">
+                              <div class="ui input fluid">
+                                <input type="text" id="simbriefUser">
+                              </div>
+                            </div>
+                            <div class="one wide column"></div>
+                            
+                            <div class="one wide column"></div>
+                            <div class="three wide column">CABIN CONFIGURATION</div>
+                            <div class="five wide column">
+                              <div class="ui selection dropdown" id="cabinConfig">
+                                <input type="hidden">
+                                <i class="dropdown icon"></i>
+                                <div class="default text"></div>
+                                <div class="menu">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="three wide column">SET SIMBRIEF DATA</div>
+                            <div class="four wide column">
+                              <div class="ui toggle checkbox" id="setSimbriefData">
+                                <input type="checkbox">
+                                <label></label>
+                              </div>
                             </div>
 
-                            <div class="right aligned eight wide column">INTERACTION TYPE</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown vr-opt" id="interactionType">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item" data-value="-8">unique combination method</div>
-                                        <div class="item" data-value="0">no mouse wheel</div>
-                                        <div class="item" data-value="1">active mouse wheel</div>
-                                        <div class="item" data-value="2">click + mouse wheel</div>
-                                        <div class="item" data-value="3">click + mouse wheel + click</div>
-                                    </div>
+                            <div class="one wide column"></div>
+                            <div class="three wide column">CHARTS DATA</div>
+                            <div class="five wide column">
+                              <div class="ui selection dropdown" id="chartsData">
+                                <input type="hidden">
+                                <i class="dropdown icon"></i>
+                                <div class="default text"></div>
+                                <div class="menu">
+                                  <div class="item" data-value="0">PDF viewer</div>
+                                  <div class="item" data-value="1">Navigraph / Jeppesen</div>
+                                  <div class="item" data-value="2">NavDataPro / LIDO</div>
                                 </div>
+                              </div>
                             </div>
-                            <div class="right aligned eight wide column">INTERACTION ACTIVATION</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown vr-opt" id="interactionActivation">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item iaMiddleVal" data-value="0">middle mouse button</div>
-                                        <div class="item iaRightVal" data-value="1">right mouse button</div>
-                                        <div class="item" data-value="2">left mouse button</div>
-                                        <div class="item" data-value="3">left double click</div>
-                                    </div>
-                                </div>
+                            <div class="three wide column">BROWSER HOMEPAGE</div>
+                            <div class="three wide column">
+                              <div class="ui input fluid">
+                                <input type="text" id="browserHomepage">
+                              </div>
                             </div>
-                            <div class="right aligned eight wide column">PROTECTED CLICKS</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown vr-opt" id="protectedClicks">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item" data-value="0">fully</div>
-                                        <div class="item" data-value="1">zoom</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right aligned eight wide column">INTERACTION IN VR</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown vr-opt" id="interactionVR">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item" data-value="0">interaction type simple (native)</div>
-                                        <div class="item" data-value="1">advanced (full thumbstick/touchpad)</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right aligned eight wide column">TOOL TIPS</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown vr-opt" id="toolTips">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item ttRightVal" data-value="0">on right mouse click</div>
-                                        <div class="item ttMiddleVal" data-value="1">on middle mouse click</div>
-                                        <div class="item" data-value="2">on mouse hover</div>
-                                        <div class="item" data-value="-1">no tooltip</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right aligned eight wide column">DATAREF</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown vr-opt" id="dataRef">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item" data-value="0">no dataref in tooltip</div>
-                                        <div class="item" data-value="1">dataref on screen</div>
-                                        <div class="item" data-value="2">dataref in log</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right aligned eight wide column">BACKGROUND</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown vr-opt" id="backGround">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item" data-value="0">no background</div>
-                                        <div class="item" data-value="1">transparent background</div>
-                                        <div class="item" data-value="2">black background</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right aligned eight wide column">REFLECTION EFFECT</div>
-                            <div class="eight wide column">
-                                <div class="ui toggle checkbox" id="reflection">
-                                    <input type="checkbox">
-                                    <label></label>
-                                </div>
-                            </div>
-                            <div class="right aligned eight wide column">SHOW FAILURES TAB</div>
-                            <div class="eight wide column">
-                                <div class="ui toggle checkbox" id="show_failures_tab">
-                                    <input type="checkbox">
-                                    <label></label>
-                                </div>
-                            </div>
-                            <div class="right aligned eight wide column">SHOW STATES TAB</div>
-                            <div class="eight wide column">
-                                <div class="ui toggle checkbox" id="show_states_tab">
-                                    <input type="checkbox">
-                                    <label></label>
-                                </div>
-                            </div>
+                            <div class="one wide column"></div>
 
+                            <div class="one wide column"></div>
+                            <div class="three wide column">WEATHER SOURCE</div>
+                            <div class="five wide column">
+                              <div class="ui selection dropdown" id="wxSource">
+                                <input type="hidden">
+                                <i class="dropdown icon"></i>
+                                <div class="default text"></div>
+                                <div class="menu">
+                                  <div class="item" data-value="0">VentuSky Weather</div>
+                                  <div class="item" data-value="1">Windy Weather</div>
+                                  <div class="item" data-value="2">RainViewer</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="seven wide column"></div>
                         </div>
-                    </div>
-                    <div class="eight wide column">
+                      </div>
+                      
+                      <div class="title">
+                        <i class="dropdown icon"></i>
+                        TAB VISIBILITY <span class="description">Customize EFB tab visibility to your liking</span>
+                      </div>
+                      <div class="content" id="settingsVisibility">
                         <div class="ui grid middle aligned settings">
-                            <div class="sixteen wide column"></div>
+                          <div class="sixteen wide column"></div>
 
-                            <div class="right aligned eight wide column">RAIN EFFECT</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown" id="rain">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item" data-value="0">Off</div>
-                                        <div class="item" data-value="512">Low</div>
-                                        <div class="item" data-value="1024">Normal</div>
-                                        <div class="item" data-value="2048">Hi</div>
-                                    </div>
-                                </div>
+                          <div class="two wide column"></div>
+                          <div class="two wide column">PLAN TAB</div>
+                          <div class="one wide column">
+                            <div class="ui toggle checkbox" data-target="plan">
+                              <input type="checkbox">
+                              <label></label>
                             </div>
-                            <div class="right aligned eight wide column">IRS ALIGNMENT SPEED</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown" id="irsAlignment">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item" data-value="1">1x</div>
-                                        <div class="item" data-value="2">2x</div>
-                                        <div class="item" data-value="5">5x</div>
-                                        <div class="item" data-value="10">10x</div>
-                                    </div>
-                                </div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="two wide column">CHARTS TAB</div>
+                          <div class="one wide column">
+                            <div class="ui toggle checkbox" data-target="charts">
+                              <input type="checkbox">
+                              <label></label>
                             </div>
-                            <div class="four wide column"></div>
-                            <div class="ten wide column">
-                                <fieldset class="a320-server-field-set">
-                                    <legend>SERVER SETTINGS</legend>
-                                    <div class="ui grid middle aligned">
-                                        <div class="right aligned six wide column">PORT</div>
-                                        <div class="ten wide column">
-                                            <div class="ui input fluid"><input type="text" id="iServerPors" class="kNum"></div>
-                                        </div>
-                                        <div class="right aligned six wide column">USER</div>
-                                        <div class="ten wide column">
-                                            <div class="ui input fluid"><input type="text" id="iServerUser"></div>
-                                        </div>
-                                        <div class="right aligned six wide column">PASS</div>
-                                        <div class="ten wide column">
-                                            <div class="ui input fluid"><input type="password" id="iServerPass"></div>
-                                        </div>
-                                    </div>
-                                </fieldset>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="two wide column">TAXIWAYS TAB</div>
+                          <div class="one wide column">
+                            <div class="ui toggle checkbox" data-target="taxiways">
+                              <input type="checkbox">
+                              <label></label>
                             </div>
-                            <div class="right aligned eight wide column">CHARTS</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown" id="charts_dropdown">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item" data-value="0">PDF viewer</div>
-                                        <div class="item" data-value="1">Navigraph / Jeppesen</div>
-                                        <div class="item" data-value="2">NavDataPro / LIDO</div>
-                                    </div>
-                                </div>
+                          </div>
+                          <div class="three wide column"></div>
+
+                          <div class="two wide column"></div>
+                          <div class="two wide column">PDF TAB</div>
+                          <div class="one wide column">
+                            <div class="ui toggle checkbox" data-target="pdf">
+                              <input type="checkbox">
+                              <label></label>
                             </div>
-                            <div class="right aligned eight wide column">WX TAB</div>
-                            <div class="eight wide column">
-                                <div class="ui selection dropdown" id="wx_dropdown">
-                                    <input type="hidden">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text"></div>
-                                    <div class="menu">
-                                        <div class="item" data-value="0">VentuSky Weather</div>
-                                        <div class="item" data-value="1">Windy Weather</div>
-                                        <div class="item" data-value="2">RainViewer</div>
-                                    </div>
-                                </div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="two wide column">METAR TAB</div>
+                          <div class="one wide column">
+                            <div class="ui toggle checkbox" data-target="metar">
+                              <input type="checkbox">
+                              <label></label>
                             </div>
-                            <div class="right aligned eight wide column">SIMBRIEF USERNAME</div>
-                            <div class="six wide column">
-                                <div class="ui input fluid"><input type="text" id="iSimbriefName"></div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="two wide column">WX TAB</div>
+                          <div class="one wide column">
+                            <div class="ui toggle checkbox" data-target="wx">
+                              <input type="checkbox">
+                              <label></label>
                             </div>
-                            <div class="right aligned eight wide column">SET LOADSHEET DATA</div>
-                            <div class="eight wide column">
-                                <div class="ui toggle checkbox" id="set_loadsheet_data">
-                                    <input type="checkbox">
-                                    <label></label>
-                                </div>
+                          </div>
+                          <div class="three wide column"></div>
+
+                          <div class="two wide column"></div>
+                          <div class="two wide column">BROWSER TAB</div>
+                          <div class="one wide column">
+                            <div class="ui toggle checkbox" data-target="browser">
+                              <input type="checkbox">
+                              <label></label>
                             </div>
-                            <div class="right aligned eight wide column">SHOW PDF TAB</div>
-                            <div class="eight wide column">
-                                <div class="ui toggle checkbox" id="show_pdf_viewer">
-                                    <input type="checkbox">
-                                    <label></label>
-                                </div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="two wide column">STATES TAB</div>
+                          <div class="one wide column">
+                            <div class="ui toggle checkbox" data-target="states">
+                              <input type="checkbox">
+                              <label></label>
                             </div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="two wide column">FAILURES TAB</div>
+                          <div class="one wide column">
+                            <div class="ui toggle checkbox" data-target="failures">
+                              <input type="checkbox">
+                              <label></label>
+                            </div>
+                          </div>
+                          <div class="three wide column"></div>
                         </div>
+                      </div>
+                      
+                      <div class="title">
+                        <i class="dropdown icon"></i>
+                        VISUALS <span class="description">Visual effects and quality settings</span>
+                      </div>
+                      <div class="content">
+                        <div class="ui grid middle aligned settings">
+                          <div class="sixteen wide column"></div>
+                          
+                          <div class="one wide column"></div>
+                          <div class="three wide column">PANELS QUALITY</div>
+                          <div class="five wide column">
+                            <div class="ui selection dropdown" id="quality">
+                              <input type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text"></div>
+                              <div class="menu">
+                                <div class="item" data-value="Low">Low</div>
+                                <div class="item" data-value="Normal">Normal</div>
+                                <div class="item" data-value="Hi">Hi</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="three wide column">REFLECTION EFFECT</div>
+                          <div class="four wide column">
+                            <div class="ui toggle checkbox" id="reflection">
+                              <input type="checkbox">
+                              <label></label>
+                            </div>
+                          </div>
+                            
+                          <div class="one wide column"></div>
+                          <div class="three wide column">RAIN EFFECT</div>
+                          <div class="five wide column">
+                            <div class="ui selection dropdown" id="rain">
+                              <input type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text"></div>
+                              <div class="menu">
+                                <div class="item" data-value="0">Off</div>
+                                <div class="item" data-value="512">Low</div>
+                                <div class="item" data-value="1024">Normal</div>
+                                <div class="item" data-value="2048">Hi</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="seven wide column"></div>
+
+                          <div class="one wide column"></div>
+                          <div class="six wide column">
+                            You must restart the game for some of the visual changes to take effect.
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="title">
+                        <i class="dropdown icon"></i>
+                        HTTP SERVER <span class="description">Configure remote EFB browser access</span>
+                      </div>
+                      <div class="content">
+                        <div class="ui grid middle aligned settings">
+                          <div class="sixteen wide column"></div>
+
+                          <div class="one wide column"></div>
+                          <div class="three wide column">USERNAME</div>
+                          <div class="three wide column">
+                            <div class="ui input fluid"><input type="text" id="serverUser"></div>
+                          </div>
+                          <div class="one wide column"></div>
+
+                          <div class="two wide column">PASSWORD</div>
+                            <div class="three wide column">
+                              <div class="ui input fluid"><input type="password" id="serverPass"></div>
+                            </div>
+                          <div class="three wide column"></div>
+
+                          <div class="one wide column"></div>
+                          <div class="three wide column">LISTEN PORT</div>
+                          <div class="three wide column">
+                            <div class="ui input fluid"><input type="text" id="serverPort" class="kNum"></div>
+                          </div>
+                          <div class="nine wide column"></div>
+
+                          <div class="one wide column"></div>
+                          <div class="six wide column">
+                            You must set a username and password for the HTTP server to accept remote connections.
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="title">
+                        <i class="dropdown icon"></i>
+                        VIRTUAL REALITY <span class="description">VR Headset related settings</span>
+                      </div>
+                      <div class="content">
+                        <div class="ui grid middle aligned settings">
+                          <div class="sixteen wide column"></div>
+
+                          <div class="one wide column"></div>
+                          <div class="four wide column">INTERACTION TYPE</div>
+                          <div class="eleven wide column">
+                            <div class="ui selection dropdown vr-opt" id="interactionType">
+                              <input type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text"></div>
+                              <div class="menu">
+                                <div class="item" data-value="-8">unique combination method</div>
+                                <div class="item" data-value="0">no mouse wheel</div>
+                                <div class="item" data-value="1">active mouse wheel</div>
+                                <div class="item" data-value="2">click + mouse wheel</div>
+                                <div class="item" data-value="3">click + mouse wheel + click</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="four wide column">INTERACTION ACTIVATION</div>
+                          <div class="eleven wide column">
+                            <div class="ui selection dropdown vr-opt" id="interactionActivation">
+                              <input type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text"></div>
+                              <div class="menu">
+                                <div class="item iaMiddleVal" data-value="0">middle mouse button</div>
+                                <div class="item iaRightVal" data-value="1">right mouse button</div>
+                                <div class="item" data-value="2">left mouse button</div>
+                                <div class="item" data-value="3">left double click</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="four wide column">PROTECTED CLICKS</div>
+                          <div class="eleven wide column">
+                            <div class="ui selection dropdown vr-opt" id="protectedClicks">
+                              <input type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text"></div>
+                              <div class="menu">
+                                <div class="item" data-value="0">fully</div>
+                                <div class="item" data-value="1">zoom</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="four wide column">INTERACTION IN VR</div>
+                          <div class="eleven wide column">
+                            <div class="ui selection dropdown vr-opt" id="interactionVR">
+                              <input type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text"></div>
+                              <div class="menu">
+                                <div class="item" data-value="0">interaction type simple (native)</div>
+                                <div class="item" data-value="1">advanced (full thumbstick/touchpad)</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="four wide column">TOOL TIPS</div>
+                          <div class="eleven wide column">
+                            <div class="ui selection dropdown vr-opt" id="toolTips">
+                              <input type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text"></div>
+                              <div class="menu">
+                                <div class="item ttRightVal" data-value="0">on right mouse click</div>
+                                <div class="item ttMiddleVal" data-value="1">on middle mouse click</div>
+                                <div class="item" data-value="2">on mouse hover</div>
+                                <div class="item" data-value="-1">no tooltip</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="four wide column">DATAREF</div>
+                          <div class="eleven wide column">
+                            <div class="ui selection dropdown vr-opt" id="dataRef">
+                              <input type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text"></div>
+                              <div class="menu">
+                                <div class="item" data-value="0">no dataref in tooltip</div>
+                                <div class="item" data-value="1">dataref on screen</div>
+                                <div class="item" data-value="2">dataref in log</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="one wide column"></div>
+                          <div class="four wide column">BACKGROUND</div>
+                          <div class="eleven wide column">
+                            <div class="ui selection dropdown vr-opt" id="backGround">
+                              <input type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text"></div>
+                              <div class="menu">
+                                <div class="item" data-value="0">no background</div>
+                                <div class="item" data-value="1">transparent background</div>
+                                <div class="item" data-value="2">black background</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
-                    <div class="sixteen wide column" style="height: 50px;"></div>
-                    <div class="thirteen wide column"></div>
-                    <div class="two wide column">
-                        <div class="ui button a320-switch-btn" id="apply_settings">Apply</div>
-                    </div>
+                  </div>
                 </div>
 
-                <div class="ui modal" id="alertSettings">
-                    <div class="header">
-                        Warning!
-                    </div>
-                    <div class="image content">
-                        <div class="description">
-                            A description can appear on the right
-                        </div>
-                    </div>
-                    <div class="actions">
-                        <div class="ui grid middle aligned">
-                            <div class="fourteen wide column"></div>
-                            <div class="two wide column"><div class="ui button ok a320-switch-btn">OK</div></div>
-                        </div>
-                    </div>
+                <div class="fourteen wide column"></div>
+                <div class="two wide column">
+                  <div class="ui button a320-switch-btn" id="applySettings">Apply</div>
                 </div>
+
+              </div>
             </div>
 
-            <div class="ui bottom attached tab segment" data-tab="tab11">
-                tab 11
-            </div>
-
-            <div class="ui bottom attached tab segment" data-tab="tab12" style="height: 700px;">
+            <div class="ui bottom attached tab segment" data-tab="taxiways" style="height: 700px;">
 				<div class="ui grid middle aligned">
 					<div class="sixteen wide column">
 						<div class="ui grid middle aligned settings">
@@ -1988,7 +1721,7 @@
 				<div id="map" style="height: 98%;"></div>
             </div>
 
-            <div class="ui bottom attached tab segment" data-tab="tab15" style="height: 700px;">
+            <div class="ui bottom attached tab segment" data-tab="wx" style="height: 700px;">
 				<div class="ui grid middle aligned">
 					<div class="sixteen wide column">
 						<div class="ui grid middle aligned settings">
@@ -2013,7 +1746,7 @@
 				</div>
             </div>
 
-            <div class="ui bottom attached tab segment" data-tab="tab14">
+            <div class="ui bottom attached tab segment" data-tab="states">
                 <div class="ui grid middle aligned">
                     <div class="three wide column"></div>
                     <div class="ten wide column">
@@ -2026,20 +1759,20 @@
                                     <legend>LOAD / SAVE</legend>
                                     <div class="ui grid">
                                         <div class="right aligned three wide column">
-                                            <div class="ui icon button" id="states_update"><i class="refresh icon"></i></div>
+                                            <div class="ui icon button" id="stateUpdate"><i class="refresh icon"></i></div>
                                         </div>
                                         <div class="ten wide column">
-                                            <div class="ui listbox" id="states_list"></div>
+                                            <div class="ui listbox" id="stateList"></div>
                                         </div>
                                         <div class="three wide column">
-                                            <div class="ui button a320-switch-btn" id="state_load">Load</div>
+                                            <div class="ui button a320-switch-btn" id="stateLoad">Load</div>
                                         </div>
                                         <div class="right aligned three wide column"></div>
                                         <div class="ten wide column">
-                                            <div class="ui input fluid"><input type="text" id="save_state_name" class=""></div>
+                                            <div class="ui input fluid"><input type="text" id="saveStateName" class=""></div>
                                         </div>
                                         <div class="three wide column">
-                                            <div class="ui button a320-switch-btn" id="state_save">Save</div>
+                                            <div class="ui button a320-switch-btn" id="stateSave">Save</div>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -2066,7 +1799,7 @@
                                     <div class="ui grid middle aligned">
                                         <div class="three wide column"></div>
                                         <div class="ten wide column">
-                                            <div class="ui selection dropdown fluid" id="special_states_list">
+                                            <div class="ui selection dropdown fluid" id="specialStateList">
                                                 <input type="hidden">
                                                 <i class="dropdown icon"></i>
                                                 <div class="default text">Select special state</div>
@@ -2078,7 +1811,7 @@
                                             </div>
                                         </div>
                                         <div class="three wide column">
-                                            <div class="ui button a320-switch-btn" id="special_state_save">Save</div>
+                                            <div class="ui button a320-switch-btn" id="specialStateSave">Save</div>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -2088,7 +1821,7 @@
                             <div class="sixteen wide column" style="height: 50px;"></div>
                             <div class="twelve wide column"></div>
                             <div class="three wide column">
-                                <div class="ui button a320-switch-btn" id="apply_states">Apply</div>
+                                <div class="ui button a320-switch-btn" id="applyStates">Apply</div>
                             </div>
                         </div>
                     </div>
@@ -2109,10 +1842,271 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+                        <div class="ui bottom attached tab segment" data-tab="fap">
+                <div  id="fap_body" align="center" class="fap_body" onclick="Fap.DisplayTouch();">
+                    <div id="fap_loading" style="display:hidden">
+                        <p style="position:relative;top:45%;text-align:center;">FAP loading<br>
+                            <progress id="progress_loading" value="0.0"></progress>
+                        </p>
+                    </div>
+                    <div id="fap_screensaver" align="center" onclick="Fap.ScreensaverTouch();" style="display:none"><img id="fap_img_screensaver"  src="Resources/FAP/screensaver.jpg" style="display:none;height:100%;width:100%;object-fit: contain"></img></div>
+                    
+                    <!-- Pages -->
+                    <div id="fap_interface_waterwaste" class="fap_interface" style="display:none;" align="left">
+                        <div align="center" style="position:relative;float:left;width:15%;top:15%;left:10%;"><p class="smallfont" align="right">WASTE QUANTITY<br></p><br><img src="Resources/FAP/tank.png"  width="100%" style="float:left;" /><img src="Resources/FAP/Tank_reflection.png"  width="100%" height="93%" style="position:absolute;left:0%;bottom:0%;z-index:1005;" /><img src="Resources/FAP/waste.png"  id="fap_water_wastelevel" width="71%"  style="position:absolute;right:0%;bottom:16%;right:2%; height:10%" /></div>
+                        <div align="center" style="position:relative;float:left;width:15%;top:15%;left:15%;"><p class="smallfont" align="right">WATER QUANTITY<br></p><br><img src="Resources/FAP/tank.png"  width="100%" style="float:left;" /><img src="Resources/FAP/Tank_reflection.png"  width="100%" height="93%" style="position:absolute;left:0%;bottom:0%;z-index:1005;" /><img src="Resources/FAP/water.png" id="fap_water_waterlevel"  width="71%"  style="position:absolute;right:0%;bottom:16%;right:2%; height:61%" /></div>
+                    </div>
+                    
+                    <div id="fap_interface_temperature" class="fap_interface" style="display:none;" align="left">
+                        <div align="center" style="position:absolute;float:right; height:7%;width:6%; top:34%;left:58%;" >
+                            <button border=0 style="position:relative;top:-20%; width:100%;height:100%;color:black;" id="fap_temp_select_box_fwd_button" class="fap_button" width="100%" onclick="Fap.TempToggle(1);"><b>FWD<br>AREA</b></button>					
+                        </div>
+                        <div align="center" style="position:absolute;float:right; height:7%;width:6%; top:65%;left:76%;" >
+                            <button border=0 style="position:relative;top:-20%; width:100%;height:100%;color:black;" id="fap_temp_select_box_fwd_button" class="fap_button" width="100%" onclick="Fap.TempToggle(2);"><b>AFT<br>AREA</b></button>					
+                        </div>
+                        <div align="center" class="fap_bla" id="fap_temp_select_value_box_up" style="float:right; height:50%;	width:29%; top:12%;left:20%;display:none;" ><p class="smallfont" style="position:relative;" id="fap_temp_box_title">FWD AREA</p>
+                            <table border=0 style="width:100%;height:95%">
+                            <tr>
+                                <td width="50%" class="fap_thermometer" align="center" style="position:relative;">
+                                    <div style="position:relative;height:80.7%;width:18%;bottom:0%;">
+                                        <img id="fap_temp_select_value_thermometer" src="Resources/FAP/thermometerliquid.png" style="position:absolute;left:0px;bottom:0px;" height="86%" width="100%"></img><br>
+                                    </div>
+                                    <p style="position:absolute;top:88%;left:34%;" id="fap_temp_select_value_thermometer_label" class="smallfont">24.0°C</p>
+                                </td>
+                                <td width="50%" align="center" style="vertical-align:top;"><p style="position:relative;top:20%;" class="smallfont"><br><br><br>SELECTED TEMPERATURE<br></p>
+                                    <div style="width:40%;background-color:lightblue;height:10%;border:0.1vmin solid black"><p style="position:relative;height:100%;top:20%;color:black;" id="fap_temp_select_value"  class="biggerfont"><b>10.0°C</b></p></div><br>
+                                    <table border=0 style="position:relative; width:39%;height:30%;color:black;">
+                                        <tr align="center"  height="50%">
+                                            <td>
+                                                <button border=0 style="position:relative;background-image:url('Resources/FAP/button_plus.png')" id="fap_temp_select_value_plus" class="fap_button" width="100%" onclick="Fap.TempRequest('+');"></button>
+                                            </td>
+                                        </tr>
+                                        <tr align="center" height="50%">
+                                            <td>
+                                                <button border=0 style="position:relative;background-image:url('Resources/FAP/button_minus.png')" id="fap_temp_select_value_minus" class="fap_button" width="100%" onclick="Fap.TempRequest('-');"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            </table>
+                        
+                        </div>
+                        <div align="center" class="fap_bla" id="fap_temp_select_value_box_down" style="float:right; height:18%;	width:29%; top:67%;left:20%;display:none" >	
+                            <table border=0 style="position:relative; width:20%;height:40%;color:black;">
+                                <tr align="center">
+                                    <td><button border=0 style="position:relative" id="fap_temp_select_reset" class="fap_button" width="100%" onclick="Fap.TempRequest('=');"><b>Reset</b></button></td>	
+                                </tr>
+                            </table>
+                            <p class="smallfont">RESET TO COCKPIT<br>SELECTED TEMPERATURE<br>(ALL AREAS)</p>
+                        </div>
+                    </div>
+                    
+                    <div id="fap_interface_lights"  class="fap_interface" style="display:none;" align="left">
+                        <div align="center" style="position:absolute;float:right; height:7%;width:45%; top:11%;left:35%;" >
+                            <br>
+                            <table border=0 style="position:relative;top:-10%; width:100%;height:100%;color:black;">
+                                    <tr align="left">
+                                        <td>
+                                            <button border=0 style="position:relative" id="fap_light_button_Main" class="fap_button" width="100%" onclick="Fap.LightRequest(0,1);"><b>MAIN</b></button>							
+                                        </td>	
+                                        <td width="11.1%"></td>	
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_AISLE" class="fap_button" width="100%" onclick="Fap.LightRequest(0,2);"><b>AISLE</b></button>						
+                                        </td>
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_WIDW" class="fap_button" width="100%" onclick="Fap.LightRequest(0,3);"><b>WDO</b></button>						
+                                        </td>	
+                                        <td width="11.1%"></td>		
+                                        <td width="11.1%"></td>		
+                                        <td width="11.1%"></td>		
+                                        <td >
+                                        <button border=0 style="position:relative" id="fap_light_button_RLSet" class="fap_button" width="100%" onclick="Fap.LightRequest(0,4);"><b>R/L<br>SET</b></button>
+                                        
+                                        </td>
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_RLReset" class="fap_button" width="100%" onclick="Fap.LightRequest(0,5);"><b>R/L<br>RESET</b></button>
+                                        
+                                        </td>
+                                    </tr>
+                            </table>	
+                        </div>
+                        <div align="center" class="fap_bla" style="float:right; top:30%;left:8%;" >
+                            <p class="smallfont" style="position:relative;top:-12%;">FWD</p>
+                            <br>
+                            <table border=0 style="position:relative; top:-20%; width:100%;height:100%;color:black;">
+                                    <tr align="left">
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_fwd_brt" class="fap_button" width="100%" onclick="Fap.LightRequest(1,3);"><b>BRT</b></button>							
+                                        </td>	
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_fwd_dim1" class="fap_button" width="100%" onclick="Fap.LightRequest(1,2);"><b>DIM 1</b></button>						
+                                        </td>	
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_fwd_dim2" class="fap_button" width="100%" onclick="Fap.LightRequest(1,1);"><b>DIM 2</b></button>						
+                                        </td>						</tr>
+                            </table>	
+                        
+                        </div>
+                        <div align="center" class="fap_bla" style="float:right; top:42%;left:38%;" >
+                            <p class="smallfont" style="position:relative;top:-12%;">CAB</p>
+                            <br>
+                            <table border=0 style="position:relative; top:-20%; width:100%;height:100%;color:black;">
+                                    <tr align="left">
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_cab_brt" class="fap_button" width="100%" onclick="Fap.LightRequest(2,3);"><b>BRT</b></button>							
+                                        </td>	
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_cab_dim1" class="fap_button" width="100%" onclick="Fap.LightRequest(2,2);"><b>DIM 1</b></button>						
+                                        </td>	
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_cab_dim2" class="fap_button" width="100%" onclick="Fap.LightRequest(2,1);"><b>DIM 2</b></button>						
+                                        </td>						
+                                    </tr>
+                            </table>	
+                        </div>
+                        <div align="center" class="fap_bla" style="float:right; top:65%;left:8%;" >
+                            <p class="smallfont" style="position:relative;top:-12%;">AFT</p>
+                            <br>
+                            <table border=0 style="position:relative; top:-20%; width:100%;height:100%;color:black;">
+                                    <tr align="left">
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_aft_brt" class="fap_button" width="100%" onclick="Fap.LightRequest(3,3);"><b>BRT</b></button>							
+                                        </td>	
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_aft_dim1" class="fap_button" width="100%" onclick="Fap.LightRequest(3,2);"><b>DIM 1</b></button>						
+                                        </td>	
+                                        <td>
+                                        <button border=0 style="position:relative" id="fap_light_button_aft_dim2" class="fap_button" width="100%" onclick="Fap.LightRequest(3,1);"><b>DIM 2</b></button>						
+                                        </td>
+                                    </tr>
+                            </table>	
+                        </div>
+                    </div>
+                    
+                    <!-- Menu -->	
+                    <div id="fap_border" align="center" style="visibility:hidden;">
+                    
+                        <table id="fap_container" border=0 style="visibility:hidden;z-index:1001;">
+                            <tr height="9%">
+                                <td width="16%" align="left">	
+                                        <table border=0 style="position:relative; width:45%;height:63%;color:black;">
+                                        <tr align="left">
+                                        <td width="25%"></td>
+                                            <td>
+                                            <button border=0 style="position:relative" id="fap_button_caution" class="fap_buttonamber" onclick="Fap.Debug();"><b>CAUT</b></button>
+                                            </td>	
+                                        </tr>
+                                    </table>	
+                                </td>
+                                <td align="center" style="vertical-align:bottom;">	
+                                    <div id="fap_title" class="bigfont">CABIN STATUS</p></div>	
+                                </td>
+                                <td width="16%" align="left" >													</td>
+                            </tr>
+                            <tr height="70%">
+                                <td colspan="3">
+                                    <div id="fap_content_status" align="center" style="height:100%;width:100%">
+                                        <table width="100%" height="100%" border=0 class="smallfont">
+                                            <tr>
+                                                <td id="fap_td_AUDIO" style="visibility:hidden;" align="center" width="20%" class="fap_aircraft"  onclick="Fap.SelectPage(2);"><p class="fap_row_title">AUDIO</p><div style="height:100%;width:100%">	
+                                                        <div style="position:relative; top:17%;width:30%;height:3%;color:#e6e6e6;" class="smallfont">BGM</div><br>
+                                                        <div style="position:relative; top:15%;width:20%;height:7%;color:black;border:0.1vmin solid #000000;background-color:#dbe9f4;" class="smallfont"><p id="fap_audio_playing" style="position:relative;top:27%">X</p></div><br>
+                                                        <div style="position:relative; top:13%;width:30%;height:3%;color:#e6e6e6;" class="smallfont">CHAN.</div><br>
+                                                        <div style="position:relative; top:11%;width:20%;height:13%;color:black;border:0.1vmin solid #000000;background-color:#5157a3;" class="smallfont"><div id="fap_audio_volume" style="position:relative;bottom:0px;height:50%;background-color:#e5f0f6;"></div> </div><br>
+                                                        <div style="position:relative; top:9%;width:30%;height:3%;color:#e6e6e6;" class="smallfont">VOL.</div><br>
+                                                        </div>
+                                                </td>
+                                                
+                                                <td id="fap_td_LIGHTS" style="visibility:hidden;" align="center" width="20%" class="fap_aircraft" onclick="Fap.SelectPage(3);"><p class="fap_row_title">LIGHTS</p><div style="height:100%;width:100%">										
+                                                        <div id="fap_light_fwd" style="position:relative; top:15%;width:22%;height:4%;border:0.1vmin solid #000000;background-color:magenta;color:black;" class="smallfont">FWD</div><br>
+                                                        <div id="fap_light_mid" style="position:relative; top:15%;width:22%;height:60%;border:0.1vmin solid #000000;background-color:magenta;color:black;vertical-align: middle;" class="smallfont"><p style="position:relative;top:45%">CAB</p></div><br>
+                                                        <div id="fap_light_aft" style="position:relative; top:15%;width:22%;height:4%;border:0.1vmin solid #000000;background-color:magenta;color:black;" class="smallfont">AFT</div>
+                                                    </div>
+                                                </td>
+                                                
+                                                <td id="fap_td_DOOR" style="visibility:hidden;" align="center" width="20%" class="fap_aircraft" onclick="Fap.SelectPage(4);"><p class="fap_row_title">DOOR / SLIDES</p></td>
+                                                
+                                                <td id="fap_td_TEMPERATURE" style="visibility:hidden;" align="center" width="20%" class="fap_aircraft" onclick="Fap.SelectPage(5);"><p class="fap_row_title">TEMPERATURE</p><div style="height:100%;width:100%">										
+                                                        <div id="fap_temperature_fwd" style="position:relative; top:15%;width:22%;height:36%;border:0.1vmin solid #000000;background-color:#8ac7db;color:black;" class="smallfont"><p id="fap_temperature_fwd_value" style="position:relative;top:45%">XX.X</p></div><br>
+                                                        <div id="fap_temperature_aft" style="position:relative; top:15%;width:22%;height:36%;border:0.1vmin solid #000000;background-color:#8ac7db;color:black;vertical-align: middle;" class="smallfont"><p id="fap_temperature_aft_value"  style="position:relative;top:45%">XX.X</p></div><br>
+                                                        </div>
+                                                </td>
+                                                
+                                                <td id="fap_td_WATER" style="visibility:hidden;" align="center" width="20%" class="fap_aircraft" onclick="Fap.SelectPage(6);"><p class="fap_row_title">WATER / WASTE</p></td>
+                                                
+                                            </tr>
+                                        </table>
+                                    </div>					
+                                </td>
+                            </tr>
+                            
+                            <tr height="11%">
+                                <td align="left" style="position:relative;">		
+                                    <table border=0 style="position:absolute;bottom:-25%; left:5%; width:30%;height:63%;color:black;">
+                                        <tr align="left">
+                                            <td >
+                                            <button border=0 style="position:relative;visibility:inherit" id="fap_button_screen_off" class="fap_button" onclick="Fap.ShowScreensaver();"><b>SCREEN<br>OFF</b></button>
+                                            </td>							
+                                            <td>
+                                            <button border=0 style="position:relative" id="fap_button_cabin_ready" class="fap_button" onclick="Fap.CabinReadyRequest();"><b>CABIN<br>READY</b></button>
+                                            </td>						
+                                        </tr>											
+                                    </table>	
+                                </td>
+                                <td align="center" style="vertical-align:bottom;width:70%;position:relative;">
+                                    <div style="position:absolute;background-image:url('Resources/FAP/Menu.png');background-position: bottom center;background-size: 85%;bottom:-17%; background-repeat:no-repeat;height:120%;width:100%;"></div>
+                                    <table border=0 style="position:relative;float:top;bottom:0; width:55%;height:63%;color:black;">
+                                        <tr style="vertical-align:bottom">
+                                            <td>
+                                            <button border=0 style="position:relative" id="fap_button1" class="fap_button" onclick="Fap.SelectPage(2);"><b>AUDIO</b></button>
+                                            </td>
+                                            <td>
+                                            <button border=0 style="position:relative" id="fap_button2" class="fap_button" onclick="Fap.SelectPage(3);"><b>LIGHTS</b></button>
+                                            </td>
+                                            <td >
+                                            <button border=0 style="position:relative" id="fap_button3" class="fap_button" onclick="Fap.SelectPage(4);"><b>DOOR/<br>SLIDES</b></button>
+                                            </td>
+                                            <td>
+                                            <button border=0 style="position:relative" id="fap_button4" class="fap_button" onclick="Fap.SelectPage(5);"><b>TEMP</b></button>
+                                            </td>
+                                            <td>
+                                            <button border=0 style="position:relative" id="fap_button5" class="fap_button" onclick="Fap.SelectPage(6);"><b>WATER/<br>WASTE</b></button>
+                                            </td>
+                                            <td>
+                                            <button border=0 style="position:relative" id="fap_button6" class="fap_button" onclick=""></button>
+                                            </td>
+                                            <td>
+                                            <button border=0 style="position:relative" id="fap_button7" class="fap_button" onclick=""></button>
+                                            </td>
+                                            <td>
+                                            <button border=0 style="position:relative" id="fap_button8" class="fap_button" onclick=""></button>
+                                            </td>
+                                            <td>
+                                            <button border=0 style="position:relative" id="fap_button9" class="fap_button" onclick=""><b>MAINT</b></button>
+                                            </td>
+                                        </tr>							
+                                    </table>	
+                                </td>
+                                <td align="right" style="position:relative;">
+                                    <table border=0 style="position:absolute;bottom:-25%; right:10%; width:30%;height:63%;color:black;">
+                                        <tr align="left">
+                                            <td>
+                                                <button border=0 style="position:relative" id="fap_button_status" class="fap_button" onclick="Fap.SelectPage(1);"><b>CABIN<br>STATUS</button>
+                                            </td>														
+                                        </tr>											
+                                    </table>				
+                                </td>
+                            </tr>
+                        </table>		
+                    </div>
+                </div>
             </div>
 
         </div>
 
     </body>
 </html>
+
