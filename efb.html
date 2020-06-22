@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <script type="text/javascript" src="https://eisenfaust12.github.io/EFB/js/efb.all.js?20062020042133" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://eisenfaust12.github.io/EFB/css/efb.all.css?20062020042133">
+        <script type="text/javascript" src="https://eisenfaust12.github.io/EFB/js/efb.all.js?22062020220035" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://eisenfaust12.github.io/EFB/css/efb.all.css?22062020220035">
     </head>
     <body>
         <div style="width: 1024px; margin: auto;" id="idEfbLayer">
@@ -1126,35 +1126,26 @@
 				</div>
             </div>
 
+            <!-- Browser -->
             <div class="ui bottom attached tab segment" data-tab="browser" style="padding-top:0; padding-bottom:0">
-                <div id="browser" class="perspective effect-moveleft" >
-                    <div class="container" >
-                        <div class="wrapper">
-                            <div class="navbar">
-                                <button id="backButton" class="navButton backButton" onclick="pageBack();" title="Go back"></button>
-                                <button id="forwardButton" class="navButton forwardButton" onclick="pageForward();" title="Go forward"></button>
-                                <button class="navButton refreshButton" onclick="clickUpdate();" title="Update page"></button>
-
-                                <label class="icon" for="urlInput">
-                                    <span class="ring"></span>
-                                    <img id="favicon" src="" />
-                                </label>
-
-                                <div id="urlWrap" >
-                                    <input id="urlInput" name="adressfeld" type="text" class="win-textbox"  onkeypress="keypressed(event);" />
-                                    <span id="urlDisplay" class="win-textbox"></span>
-                                </div>
-                                <button class="navButton stopButton" onclick="iframeNavigate(document.getElementById('urlInput').value,currentIFrameId);" title="Stop loading"></button>
-
-                            </div><br>
-                            <div class="navbar" style="color:white; margin:0;">
-                                <div id="tabdiv"></div>
-                                <button class="navButton addButton" onclick="createTabWithIframe();" title="Go forward">+</button>
-                            </div>
-                        </div>
+              <div class="container" >
+                <div class="wrapper">
+                  <div class="navbar">
+                    <button class="navButton" id="browserBack" disabled></button>
+                    <button class="navButton" id="browserForward" disabled></button>
+                    <button class="navButton" id="browserRefresh" disabled></button>
+                    <img id="browserFavIcon" src="" />
+                    <div id="urlWrap" >
+                      <input id="browserUrl" type="text" />
                     </div>
+                  </div>
+                  <div class="navbar">
+                    <div id="browserTabs"></div>
+                    <button class="navButton" id="browserNewTab">+</button>
+                  </div>
                 </div>
-                <div id="webdiv" style="position: relative; border: none;"></div>
+              </div>
+              <div id="browserPages" style="position: relative; border: none;"></div>
             </div>
 
             <!-- Failures -->
