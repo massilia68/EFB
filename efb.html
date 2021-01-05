@@ -18,6 +18,7 @@
                 <a class="item" data-tab="metar" id="wx_tab">METAR</a>
                 <a class="item" data-tab="wx" id="vs_tab">WX</a>
                 <a class="item" id="browserTab" data-tab="browser">BROWSER</a>
+                <a class="item" id="controlTab" data-tab="tab13">CONTROL</a>
                 <a class="item" data-tab="failures" id="failures_tab">FAILURES</a>
                 <a class="item" data-tab="settings">SETTINGS</a>
                 <a class="item" data-tab="states" id="states_tab">STATES</a>
@@ -1571,6 +1572,517 @@
                         </div>
                       </div>
                       
+                         <div class="ui bottom attached tab segment" data-tab="tab13">
+                <div align="center" id="AllContainer" >
+                    <div id="MCDU_FULL" align="left" >
+                        <div id="SETTINGS_DIV" align="left"><br>
+                            <div align="center">SETTINGS:</div><br>
+                            <table width="100%" style="border: solid 0 grey; color:white">
+                                <tr>
+                                    <td>Connection:</td>
+                                    <td><input type="text" class="SETTINGS_BOX" id="SETTINGS_HOST_IP"  style="width:30%" value="127.0.0.1" />:<input class="SETTINGS_BOX"  type="text"   style="width:10%" id="SETTINGS_HOST_PORT" value="6025" /> <input type="button" class="SETTINGS_BOX" value="Save" onclick="SETTINGS_SAVE()"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="MCDU_HEADER">
+                            <div id="MCDU_SETTINGS" class="MCDU_SETTINGS" onclick="SettingsToggle()"></div>
+                            <a href="index.html" id="reloadhref" style="float:left;">r</a>
+                        </div>
+                        <div id="MCDU_LSKLEFT">
+                            <div id="LSK_L1" onclick="LSK_L1_Click()"></div>
+                            <div id="LSK_L2" onclick="LSK_L2_Click()"></div>
+                            <div id="LSK_L3" onclick="LSK_L3_Click()"></div>
+                            <div id="LSK_L4" onclick="LSK_L4_Click()"></div>
+                            <div id="LSK_L5" onclick="LSK_L5_Click()"></div>
+                            <div id="LSK_L6" onclick="LSK_L6_Click()"></div>
+                        </div>
+                        <div id="MCDU_SCREEN">
+                            <div class="LCD_ROW1">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE1_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE2_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE3_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE4_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE5_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE6_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE7_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE8_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE9_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE10_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE11_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE12_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE13_CHAR24"></div>
+                                </div>
+                            </div>
+                            <div class="LCD_ROW">
+                                <div class="tablecontainer" style="display: table; height: 100%;width:100%; overflow: hidden;">
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR1"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR2"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR3"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR4"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR5"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR6"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR7"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR8"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR9"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR10"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR11"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR12"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR13"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR14"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR15"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR16"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR17"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR18"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR19"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR20"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR21"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR22"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR23"></div>
+                                    <div class="LCD_CHAR" id="LCD_LINE14_CHAR24"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="MCDU_LSKRIGHT">
+                            <div id="LSK_R1" onclick="LSK_R1_Click()"></div>
+                            <div id="LSK_R2" onclick="LSK_R2_Click()"></div>
+                            <div id="LSK_R3" onclick="LSK_R3_Click()"></div>
+                            <div id="LSK_R4" onclick="LSK_R4_Click()"></div>
+                            <div id="LSK_R5" onclick="LSK_R5_Click()"></div>
+                            <div id="LSK_R6" onclick="LSK_R6_Click()"></div>
+                        </div>
+                        <div id="MCDU_MODELINE1">
+                            <div id="btnDIR" onclick="btnDIR_Click()"></div>
+                            <div id="btnPROG" onclick="btnPROG_Click()"></div>
+                            <div id="btnPERF" onclick="btnPERF_Click()"></div>
+                            <div id="btnINIT" onclick="btnINIT_Click()"></div>
+                            <div id="btnDATA" onclick="btnDATA_Click()"></div>
+                            <div id="btnDATAr" onclick="btnDATAr_Click()"></div>
+                            <div id="btnBRT" onclick="btnBRT_Click()"></div>
+                        </div>
+                        <div id="MCDU_MODELINE2">
+                            <div id="btnFPLAN" onclick="btnFPLAN_Click()"></div>
+                            <div id="btnRADNAV" onclick="btnRADNAV_Click()"></div>
+                            <div id="btnFUELPRED" onclick="btnFUELPRED_Click()"></div>
+                            <div id="btnSECFPLAN" onclick="btnSECFPLAN_Click()"></div>
+                            <div id="btnATCCOMM" onclick="btnATCCOMM_Click()"></div>
+                            <div id="btnMCDUMENU" onclick="btnMCDUMENU_Click()"></div>
+                            <div id="btnDIM" onclick="btnDIM_Click()"></div>
+                        </div>
+                        <div id="MCDU_MODELINE3">
+                            <div id="btnAIRPORT" onclick="btnAIRPORT_Click()"></div>
+                            <div id="btnAIRPORr" onclick="btnAIRPORTr_Click()"></div>
+                        </div>
+                        <div id="MCDU_MODELINE4">
+                            <div id="btnARRLEFT" onclick="btnARRLEFT_Click()"></div>
+                            <div id="btnARRUP" onclick="btnARRUP_Click()"></div>
+                        </div>
+                        <div id="MCDU_MODELINE5">
+                            <div id="btnARRRIGHT" onclick="btnARRRIGHT_Click()"></div>
+                            <div id="btnARRDOWN" onclick="btnARRDOWN_Click()"></div>
+                        </div>
+                        <div id="MCDU_NUMBERPAD">
+                            <div id="btn1" onclick="btn1_Click()"></div>
+                            <div id="btn2" onclick="btn2_Click()"></div>
+                            <div id="btn3" onclick="btn3_Click()"></div>
+                            <div id="btn4" onclick="btn4_Click()"></div>
+                            <div id="btn5" onclick="btn5_Click()"></div>
+                            <div id="btn6" onclick="btn6_Click()"></div>
+                            <div id="btn7" onclick="btn7_Click()"></div>
+                            <div id="btn8" onclick="btn8_Click()"></div>
+                            <div id="btn9" onclick="btn9_Click()"></div>
+                            <div id="btnDOT" onclick="btnDOT_Click()"></div>
+                            <div id="btn0" onclick="btn0_Click()"></div>
+                            <div id="btnPLUSMINUS" onclick="btnPLUSMINUS_Click()"></div>
+                        </div>
+                        <div id="MCDU_CHARPAD">
+                            <div id="btnA" onclick="btnA_Click()"></div>
+                            <div id="btnB" onclick="btnB_Click()"></div>
+                            <div id="btnC" onclick="btnC_Click()"></div>
+                            <div id="btnD" onclick="btnD_Click()"></div>
+                            <div id="btnE" onclick="btnE_Click()"></div>
+
+                            <div id="btnF" onclick="btnF_Click()"></div>
+                            <div id="btnG" onclick="btnG_Click()"></div>
+                            <div id="btnH" onclick="btnH_Click()"></div>
+                            <div id="btnI" onclick="btnI_Click()"></div>
+                            <div id="btnJ" onclick="btnJ_Click()"></div>
+
+                            <div id="btnK" onclick="btnK_Click()"></div>
+                            <div id="btnL" onclick="btnL_Click()"></div>
+                            <div id="btnM" onclick="btnM_Click()"></div>
+                            <div id="btnN" onclick="btnN_Click()"></div>
+                            <div id="btnO" onclick="btnO_Click()"></div>
+
+                            <div id="btnP" onclick="btnP_Click()"></div>
+                            <div id="btnQ" onclick="btnQ_Click()"></div>
+                            <div id="btnR" onclick="btnR_Click()"></div>
+                            <div id="btnS" onclick="btnS_Click()"></div>
+                            <div id="btnT" onclick="btnT_Click()"></div>
+
+                            <div id="btnU" onclick="btnU_Click()"></div>
+                            <div id="btnV" onclick="btnV_Click()"></div>
+                            <div id="btnW" onclick="btnW_Click()"></div>
+                            <div id="btnX" onclick="btnX_Click()"></div>
+                            <div id="btnY" onclick="btnY_Click()"></div>
+
+                            <div id="btnZ" onclick="btnZ_Click()"></div>
+                            <div id="btnSLASH" onclick="btnSLASH_Click()"></div>
+                            <div id="btnSP" onclick="btnSP_Click()"></div>
+                            <div id="btnOVFY" onclick="btnOVFY_Click()"></div>
+                            <div id="btnCLR"  onclick="btnCLR_Click()"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
                       <div class="title">
                         <i class="dropdown icon"></i>
                         VIRTUAL REALITY <span class="description">VR Headset related settings</span>
@@ -2110,4 +2622,3 @@
 
     </body>
 </html>
-
